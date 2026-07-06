@@ -1,0 +1,90 @@
+.blogBanner { height: 500px;  background: rgba(0, 0, 0, 0) linear-gradient(89deg, #F15747 0%, #F68E63 100%) 0% 0% no-repeat padding-box;
+	.searchBox { padding-top:60px;  max-width: 600px; text-align:center; }
+	.blogSearchinput { width: 100%; }
+	.searchBox .searchBlock .innerBlock .inputTxt { padding: 10px; }
+	.searchBox .searchBlock .innerBlock { border-radius: 10px; }
+	.searchicon { position: absolute; left: 20px; top: 21px; }
+	.social_icon { padding: 40px;
+	img { margin: 0 10px; }
+	}
+	.searchBlock { padding-top: 40px; }
+}
+
+
+
+.blogCntr {
+	@include breakpoint(sm){ background:#fff; } 
+}
+.blogList { width: 100%; position: relative;  padding:0px 0 10px 0; 
+@include breakpoint(sm){padding-top: 14px;} 
+.blog_title { margin-bottom:30px; text-align:center; font-weight: 700; 
+	span { font-size: 14px; font-weight: 400; display:block; }
+}
+	.holder { display: flex; margin-right:-20px; flex-flow: wrap;}
+	@include breakpoint(md){  margin-right:-15px; }
+	@include breakpoint(sm){  margin-right:0px; }
+	.items { background: #fff; margin: 0 20px 30px 0; width:calc(25% - 20px); position:relative; border:1px solid #CBCBCB; border-radius:10px; overflow:hidden;
+	@include breakpoint(md){ width:calc(33.3% - 15px); margin:0 15px 20px 0; } 
+	@include breakpoint(sm){ width:100%; margin: 10px 0; padding:0 0px 20px 0; border-radius:0px; border:none; border-bottom:1px solid #CBCBCB;} 
+	
+		figure { margin: 0px; position: relative;
+		@include breakpoint(sm){ width: 116px; float:left; }
+			img {width: 100%; 
+				@include breakpoint(sm){ border-radius:10px; }
+			}
+		}
+		h2 {padding-top:10px; font-size: 18px; font-weight: 600; 
+		@include breakpoint(sm){ font-size: 15px; padding:0px; }
+			a{color:#000; text-decoration:none; 
+				&:hover {color:#EC602A;}
+			}
+		}
+		.tag { color:#EC602A; font-weight: 500; }
+	.detail { padding:15px; font-size: 14px; color:#000000;justify-content: space-between;align-items: center;
+	@include breakpoint(sm){ font-size: 12px; padding:0 12px; overflow:hidden; }
+		
+			p { 
+			@include breakpoint(sm){ margin:0px; }
+			}
+			
+			
+	}
+	}
+}
+
+.indianBox.blogsec .holder {
+		@include breakpoint(sm){  flex-flow: wrap; }
+		
+	}
+.indianBox.blogsec { padding: 0px; }
+.indianBox.blogsec .items { width:25%; 
+	@include breakpoint(sm){  width:50%; }
+}
+.indianBox.blogsec .items figure { width: auto; }
+.indianBox.blogsec .items figure:before {height: 100%;     border-radius: 10px; background: rgba(0,0,0,0.5); }
+.indianBox.blogsec .items figcaption { bottom:inherit; top: 50%; transform: translateY(-50%); }
+
+.indianBox.blogsec.topList .items figure:before { height:auto; background:transparent linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%) 0% 0% no-repeat padding-box; }
+
+	
+.mid_block { padding-bottom:30px; overflow:hidden; 
+	.big-image { width: 100%; border-radius:10px; }
+	.block { width:100%; background:#fff; padding:0px; overflow:hidden; margin-bottom:15px; border:1px solid #E1E1E1;border-radius:10px;
+		figure { float:left; margin: 0px; @include breakpoint(sm){  width: 100%; }}
+		img {  float:left;
+	@include breakpoint(sm){  width: 100%; }
+		}
+		h2{ font-size: 18px;   line-height: 22px;  font-weight: 700; margin:0 0 5px 0; }
+		.detail { overflow:hidden; padding: 15px; 
+			@include breakpoint(sm){  width: 100%; }
+		}
+		p { font-size: 13px; margin: 0px; }
+	}
+	
+	.column_left { width: 598px; float:left; 
+		@include breakpoint(sm){  width: 100%; }
+	}
+	.column_right { width:calc(100% - 598px); float:left; padding-left: 20px; 
+	@include breakpoint(sm){  width: 100%; padding:20px 0 0 0; }
+	}
+}

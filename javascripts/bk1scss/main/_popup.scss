@@ -1,0 +1,145 @@
+.popup_Box {
+    background-color: rgba(0, 0, 0, .75);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    overflow-y: auto;
+    .center-block {
+        width: 100%;
+        height: 100%;
+        z-index: 1001;
+        display: table;
+        table-layout: fixed;
+    }
+    .outer {
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+        height: 100%;
+        padding: 40px 0;
+    }
+    .close__popup {
+    position: absolute;
+    right: -11px;
+    top: -11px;
+    img {
+		@include breakpoint(sm){ width: 21px; }
+	}
+    }
+}
+
+
+/*enquiryBox*/
+.enquiryBox { max-width:1012px; background:#FFFFFF; margin: 0px auto; border-radius:20px; position: relative;
+@include breakpoint(md){max-width: inherit; width: 95%; border-radius:10px; }
+@include breakpoint(xs){max-width: inherit; width: 90%; }
+	.left { width: 50%; float:left; 
+	@include breakpoint(md){ display:none; }
+		img { width: 100%; border-radius:20px 0px 0px 20px; }
+	}
+	.right { width: 50%; float:left; padding:30px 30px 0 30px; 
+	@include breakpoint(md){ width:100%;  }
+	@include breakpoint(sm){ padding:20px 20px 0 20px; }
+	@include breakpoint(xs){ padding:20px 10px 0 10px; }
+		h2 { font-size: 34px; font-weight: 700; padding-bottom:10px; 
+			@include breakpoint(sm){ font-size: 20px; }
+		}
+		p { font-size:16px; 
+			@include breakpoint(sm){ font-size: 14px; }
+		}
+		.inputText { border: 1px solid #DEDEDE; border-radius: 5px; font-size: 16px; color:#000; padding:16px; width: 100%;
+	@include breakpoint(sm){ font-size: 14px; padding:11px; }
+		}
+		.label { font-size: 16px; color:#000000; font-weight: 500; display:block; padding:15px 0 8px 0; 
+		@include breakpoint(sm){ font-size: 14px; }
+		}
+		.holder { margin-right:-15px;
+			.column { width:calc(50% - 15px); margin-right: 15px; float:left; }
+		}
+		
+		.submitButton {  margin-top: 5px;  background: transparent linear-gradient(89deg, #F15747 0%, #F68E63 100%) 0% 0% no-repeat padding-box;
+    border-radius: 5px;  text-align: center;  font-size: 16px;  color: #fff;  text-decoration: none;  font-weight: 500;  padding: 16px 40px; width:100%; border: none; display: block;
+}
+
+.safe { font-size: 16px; color: #3B3B3B; border-top: 1px solid #ccc; text-align:center;  margin-top: 30px; padding: 14px 0; display: flex; align-items: center; justify-content: center;  
+	i {line-height: 12px; margin-right: 10px; }
+}
+	}
+}
+
+.ui-btn.ui-input-btn { text-indent:-9999999px; }
+.ui-loader {display:none; }
+
+
+/*New Thansk page*/
+.successfully-added-pop{
+ .succesfull-box{
+    background:#fff;
+    overflow:hidden;
+    max-width:100%;
+    padding:35px 25px;
+    margin:0px auto;
+    border-radius:5px; text-align:center;
+	@include breakpoint(sm){padding:30px 0 0 }
+	@include breakpoint(md){  padding:15px; }
+	 p{ font-size:18px; font-weight:600;  margin:20px 0 0;  padding:0; 
+		 @include breakpoint(sm){ font-size: 14px; }
+	 }
+	 h2 { font-size: 100px; font-weight: 800; 
+	 @include breakpoint(md){ font-size: 80px; }
+	  @include breakpoint(sm){ font-size: 50px; }
+	 }
+	 .commonbutton { margin-top: 25px; }
+}
+
+.checkmark__circle{
+    stroke-dasharray:166;
+    stroke-dashoffset:166;
+    stroke-width:5;
+    stroke-miterlimit:10;
+    stroke:#1ecd70;
+    fill:none;
+    animation:stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+}
+.checkmark{
+    right:-13px;
+    top:-1px;
+    width:100px;
+    height:100px;
+    border-radius:100%;
+    display:block;
+    stroke-width:3;
+    stroke:#fff;
+    stroke-miterlimit:10; border: 6px solid #1ecd707a;
+    margin:20px auto;
+    box-shadow:inset 0px 0px 0px #00d34f;
+    animation:fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+}
+.checkmark__check{
+    transform-origin:100% 100%;
+    stroke-dasharray:100;
+    stroke-dashoffset:100;
+    animation:stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+}
+}
+@keyframes stroke{
+    100%{
+        stroke-dashoffset:0
+    }
+}
+@keyframes scale{
+    0%, 100%{
+        transform:none
+    }
+    50%{
+        transform:scale3d(1.1, 1.1, 1)
+    }
+}
+@keyframes fill{
+    100%{
+        box-shadow:inset 0px 0px 0px 50px #1ecd70
+    }
+}

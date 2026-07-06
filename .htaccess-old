@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.invisit.in/index.php$ [NC]
+RewriteRule ^(.*)$ https://www.invisit.in/$1 [R=301,L]
+Redirect 301 /dubai-holiday-package https://invisit.in/dubai-holiday-package.php
+</IfModule>

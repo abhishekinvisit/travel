@@ -1,0 +1,439 @@
+.page_title { font-size: 34px; color:#000000; text-align:center;padding-bottom: 30px; position: relative; 
+	@include breakpoint(lg){ text-align:left; padding-bottom:26px; margin: 0px; }
+	@include breakpoint(md){ font-size: 26px; }
+	@include breakpoint(sm){ font-size: 20px; padding-bottom:20px; }
+	@include breakpoint(xs){ font-size: 18px; padding-bottom:10px; }
+}
+
+/*recommendedBox text*/
+.recommendedBox {  width: 100%; position: relative;  padding:30px 0 10px 0; 
+	
+	.holder {margin-right:-47px; 
+		@include breakpoint(lg){ margin-right:-20px; }
+		@include breakpoint(md){ overflow-x: auto; display:flex; }
+	}
+	.column { width:calc(25% - 47px); float:left; margin-right: 47px;  position: relative;
+		@include breakpoint(lg){ margin-right:20px; width:calc(25% - 20px); }
+		@include breakpoint(md){ width:100%; margin-right:15px; }
+	}
+	.items { margin-bottom:30px;  position: relative;
+	@include breakpoint(sm){ margin-bottom: 15px; }
+	figure { position: relative; margin: 0px;
+	@include breakpoint(md){ width: 260px; }
+	@include breakpoint(sm){ width: 170px; }
+	@include breakpoint(xs){ width: 150px; }
+		&:before { content:''; position: absolute; left: 0px; bottom: 0px; width:100%; height:150px; background: transparent linear-gradient(180deg, #00000000 0%, #000000 100%) 0% 0% no-repeat padding-box;
+	border-radius: 0px 0px 10px 10px; }
+	}
+		
+		img{ width: 100%; }
+		figcaption {font-family: $ranchofont; font-size: 54px; color:#fff; position: absolute; left: 0px; bottom: 20px;  text-align: center; width: 100%;  
+		@include breakpoint(lg){font-size: 38px; }
+		@include breakpoint(sm){font-size: 29px; }
+		span {font-family: 'Poppins', sans-serif; font-size: 14px; letter-spacing:2.5px; line-height:21px; display:block; text-transform:uppercase;
+		@include breakpoint(sm){font-size: 12px; letter-spacing:1px; }
+		@include breakpoint(xs){font-size: 10px; }
+		}
+		
+	}
+	
+	}
+}
+
+
+
+/*recommendedBox text*/
+.indianBox {  width: 100%; position: relative;  padding:30px 0 10px 0; 
+@include breakpoint(sm){padding-top: 14px;} 
+	.holder { display: flex; margin-right:-20px;
+	@include breakpoint(lg){display: flex; overflow-x: auto; overflow-y: hidden;  padding-bottom: 17px; margin-right:-20px; }
+	@include breakpoint(sm){ margin-left:0px;  } 
+	}
+	.items { padding:0 20px 0 0; padding-bottom:30px;  position: relative;
+	@include breakpoint(lg){ padding:0 15px 10px 0; } 
+		figure { position: relative; margin: 0px; width:267px;
+		@include breakpoint(xl){width: auto;}
+		@include breakpoint(lg){width: 250px;}
+		@include breakpoint(sm){width: 200px;} 
+		@include breakpoint(xs){width: 150px;} 
+		&:before { content:''; position: absolute; left: 0px; bottom: 0px; width:100%; height:95px; background: transparent linear-gradient(180deg, #00000000 0%, #000000 100%) 0% 0% no-repeat padding-box;
+border-radius: 0px 0px 10px 10px; }
+		}
+		
+		img{ width: 100%; }
+		figcaption {font-family: $ranchofont; font-size: 54px; color:#fff; position: absolute; left: 0px; bottom: 10px;  text-align: center; width: 100%;  
+		@include breakpoint(lg){font-size: 38px; }
+		
+		
+	}
+	
+	}
+	.slick-next { right:-12px; }
+}
+
+/*Slider with text*/
+.sliderwithinfo { width: 100%; position: relative;  padding:30px 0 10px 0;
+@include breakpoint(sm){padding-top: 14px;} 
+	.holder { display: flex;
+		@include breakpoint(lg){overflow-x: auto; overflow-y: hidden;  padding-bottom: 17px; margin-right:-20px;}
+	}
+	.block { 
+	@include breakpoint(lg){width: 250px;} 
+	@include breakpoint(sm){width: 200px;} 
+	@include breakpoint(xs){width: 150px;} 
+	}
+	.items { padding: 0 20px 0 0; position:relative;
+	@include breakpoint(sm){ padding:0 15px 0 0; } 
+		figure { margin: 0px; position: relative;
+			&:before { content:''; width:100%; height:96px; position: absolute; left: 0px; bottom: 0px; background: transparent linear-gradient(180deg, #00000000 0%, #000000 100%) 0% 0% no-repeat padding-box; }
+			img {width: 100%;  border-radius: 10px;}
+		}
+		
+		figcaption { font-size: 14px; font-weight: 400;color:#fff; position: absolute; left: 10px; bottom: 10px;  text-transform: capitalize; width: 100%;  
+		@include breakpoint(md){ font-size: 12px; }
+		strong { font-size: 20px;
+			@include breakpoint(lg){ font-size: 18px; }
+			@include breakpoint(md){ font-size: 14px; }
+			@include breakpoint(sm){ display:block; }
+		}
+	}
+	.detail { padding:10px; border: 1px solid #CBCBCB; border-radius: 0 0 10px 10px; font-size: 14px; color:#000000;
+	@include breakpoint(xs){ font-size: 10px; padding:6px; }
+			p { margin-bottom: 5px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;  
+			@include breakpoint(sm){ margin:0px; }
+			}
+			.price { font-family:$rubikfont; font-size: 20px; font-weight: 700; color: #000000; 
+			@include breakpoint(lg){ font-size: 18px; }
+			@include breakpoint(sm){ font-size: 16px; }
+			@include breakpoint(xs){ font-size: 14px; }
+				.discount { color:#7C7C7C; text-decoration: line-through; font-weight: 400; padding-right:5px; }
+			}
+	}
+	}
+	
+	.slick-list.draggable { padding: 0 100px 0 0!important; }
+	.viewall { border:1px solid #000000; border-radius:5px; font-size:16px; color:#000000; text-decoration:none; display:block; padding:10px 10px;     width: 101px;
+    text-align: center; font-weight: 500;  position: absolute;  right: 0px;  top: 12px; 
+		@include breakpoint(md){ top: 2px; }
+		@include breakpoint(sm){ border:none; color:#FF5300; right:-20px; }
+		@include breakpoint(xs){ top:-9px;  }
+	}
+	/**/
+	&.int-slider {
+		figcaption {font-family: $ranchofont; font-size: 54px; color:#fff; position: absolute; left: 0px; bottom: 20px;  text-align: center; width: 100%;  
+		@include breakpoint(lg){font-size: 38px; }
+		@include breakpoint(sm){font-size: 29px; }
+		span {font-family: 'Poppins', sans-serif; font-size: 14px; letter-spacing:2.5px; line-height:21px; display:block; text-transform:uppercase;
+		@include breakpoint(sm){font-size: 12px; letter-spacing:1px; }
+		@include breakpoint(xs){font-size: 10px; }
+		}
+		
+	}
+	figure{	&:before { content:''; border-radius: 0px 0px 10px 10px; } }
+	}
+	/**/
+}
+
+
+/*Slider without text*/
+.thumbsSlider { width: 100%; position: relative;  padding:30px 0 10px 0;
+@include breakpoint(sm){padding-top: 14px;} 
+	.holder {  margin:0 0 0 -20px; }
+	.items { padding: 0 0 0 20px; position:relative;
+		img { width: 100%; border-radius: 10px; }
+		figcaption {font-family: $goboldfont; font-size: 26px; font-weight: 700; font-style:italic; color:#fff; position: absolute; left: 0px; top: 20px;  text-transform: uppercase;
+    text-align: center; width: 100%;  
+		@include breakpoint(lg){ font-size: 23px; }
+	}
+	.darktext {color: #222222;}
+	}
+}
+
+
+
+/*addBannerBox*/
+.addBannerBox { padding: 10px 0 0 0; 
+	img { width: 100%; border-radius: 10px; }
+	.desk-img { display:block;
+		@include breakpoint(sm){ display:none; }
+	}
+	.mob-img { display:none; 
+		@include breakpoint(sm){ display:block; }
+	}
+	@include breakpoint(sm){
+	.slick-dots{ bottom: 20px; }
+	.slick-dots li button {width:8px; height:8px;}
+	.slick-dots li button:before {width:8px; height:8px;}
+	}
+}
+
+
+/**/
+.uspBox{ padding:20px 0; margin: 20px 0 0 0; background:transparent linear-gradient(180deg, #feeeec 0%, #fef4f0 100%) 0% 0% no-repeat padding-box;
+@include breakpoint(sm){ padding:8px 0px 16px 0; }
+.container { max-width: 1437px; padding: 0px; 
+@include breakpoint(lg){ width: 100%; padding-left: 15px; padding-right: 15px; } }
+	.holder { display: flex;  align-items: center; justify-content: space-between; }
+	.block { font-size: 18px; color:#000000; font-weight: 500; display:flex!important;  align-items: center; height: 100%;
+	@include breakpoint(lg){ font-size: 14px; 
+		br { display:none; }
+	}
+	@include breakpoint(md){ font-size: 12px; }
+	
+		p { margin: 0px; }
+		img { margin-right: 15px; float:left; 
+			@include breakpoint(md){ width:27px; margin-right:10px; }
+		}
+	}
+	.slick-dotted.slick-slider{	@include breakpoint(sm){ margin-bottom:0px; }}
+	
+	@include breakpoint(sm){
+		.slick-dots li { width: auto; }
+	.slick-dots{ bottom: -10px; }
+	.slick-dots li button {width:8px; height:8px;}
+	.slick-dots li button:before {width:8px; height:8px;  }
+	
+	}
+	
+}
+
+/*perfectBox  text*/
+.perfectBox { width: 100%; position: relative;  padding:50px 0 10px 0;
+@include breakpoint(lg){padding-top: 20px; }
+	.holder { display: flex; margin: 0 0 0 -20px;
+		@include breakpoint(lg){overflow-x: auto; overflow-y: hidden;  padding-bottom: 17px; margin-right:-20px;}
+	}
+	.right_cntr { float: right; 
+			@include breakpoint(lg){ float:none; }
+	}
+	.items { padding: 0 0 0 20px;  width:230px;
+		@include breakpoint(lg){ padding-left: 15px;  }
+		figure { position:relative;
+			@include breakpoint(lg){ width: 200px; margin: 0px; }
+			@include breakpoint(sm){ width: 165px; margin: 0px; }
+		}
+		img { width: 100%;  border-radius:10px; }
+		figcaption {font-family: $goboldfont; padding:10px; font-size: 22px; font-weight: 600; font-style:italic; color:#fff; position: absolute; left: 0px; top: 20px;  text-transform: uppercase;
+    text-align: center; width: 100%;  
+		@include breakpoint(lg){  font-size: 17px; }
+		@include breakpoint(sm){  font-size: 16px; top:4px; }
+	}
+	}
+	h2 { padding-top:12px; font-size: 44px; color:#000000; font-weight: 300; padding-bottom:15px; 
+		span { font-weight: 700; color: #FF5300; display:block; padding-top: 5px; }
+		@include breakpoint(xl) { font-size: 40px; }
+		@include breakpoint(lg) { font-size: 34px; }
+		@include breakpoint(md) { font-size: 23px; }
+		@include breakpoint(sm) { font-size: 15px; }
+	}
+	p { font-size: 18px; font-weight: 500; 
+		@include breakpoint(lg) { font-size: 15px; }
+		@include breakpoint(sm) { font-size: 12px; }
+	}
+	.left { padding-right: 50px; width: 540px; float:left; 
+	
+		@include breakpoint(lg) { width: 440px; }
+		@include breakpoint(md) { width:340px; }
+		@include breakpoint(sm) { width:200px; }
+		@include breakpoint(xs) { width:160px; padding-right:20px; }
+	}
+	.right { width:calc(100% - 540px); float:left; 
+		@include breakpoint(lg) { width:calc(100% - 440px); }
+		@include breakpoint(md) { width:calc(100% - 340px); }
+		@include breakpoint(sm) { width:calc(100% - 200px); }
+		@include breakpoint(xs) { width:calc(100% - 160px); }
+	}
+	
+}
+
+/*Testimonial*/
+.testimonialCntr { padding: 40px 0;  overflow:hidden; display: flex; align-items: center;  justify-content: center; flex-direction: row-reverse;
+@include breakpoint(lg) { flex-direction:column; }
+@include breakpoint(sm) { margin:-20px -15px 0 -15px; padding-top:0px; }
+.testimonialSliderMob {
+	.items { padding: 0 10px; }
+	img { width: 45px; }
+	.slick-slide.slick-active .block { background:#FF53001A; border-color:#FF5300; }
+}
+	.testimonialBox { width:calc(100% - 550px); float:left; padding:0 140px 0 140px;
+	@include breakpoint(xl) { padding: 0 20px;  }
+	@include breakpoint(lg) { width: 100%; padding: 0px;  }
+	.page_title {
+		@include breakpoint(sm){ padding:0 15px 0px 15px; }
+	}
+	.viewall { font-size: 14px; color:#FF5300; text-decoration: none; float: right; }
+			.left { width: 50%; float:left; padding-right: 35px; 
+				@include breakpoint(sm){ width: 100%; }
+			}
+			.block { margin-top:25px; border: 1px solid #CBCBCB; border-radius: 10px; padding: 15px; 
+				.top {display: flex; align-items: center;  font-size: 16px; font-weight: 600;
+					i { color: #F9D800; }
+					img { margin: 0 10px 0px 0; border-radius: 100%; }
+				}
+				p { padding-top:15px; font-size: 16px; line-height: 25px;
+					@include breakpoint(sm){font-size: 13px; line-height: 22px; }
+				}
+				&.selected { background:#FF53001A; border-color:#FF5300; }
+			}
+	}
+	.google_reviews { width:550px; padding:0px 20px 0 80px; float:right;
+		@include breakpoint(lg) { width: 100%; padding:0 0 30px 0;  }
+		@include breakpoint(sm){ padding:0 15px 10px 15px; }
+		h3 { font-size: 18px; font-weight: 500; color: #000000; }
+		.googlereviews { padding:30px 0;  display: flex;
+		@include breakpoint(sm){ padding-bottom: 0px; }
+			.count { width: 50px; height: 50px; display:block; background:#FFEDE5; border:1px solid #FF5300; font-size: 19px; font-weight:600; color:#000000; text-align:center; line-height:50px;
+				border-radius:100%; margin-right:10px;  margin-top:-5px;
+			}
+			i { color: #F9D800; }
+		}
+		
+		h2 { padding-top:12px; font-size: 44px; color:#000000; font-weight: 300; padding-bottom:15px; 
+		span { font-weight: 700; color: #FF5300; display:block; padding-top: 5px; }
+		@include breakpoint(xl) { font-size: 40px; }
+	}
+	p { font-size: 18px; font-weight: 500; }blogBox 
+	
+
+	.reviewsbutton { margin-top:20px; width: 245px; }
+
+	}
+	.slick-dots { bottom: 50%;  display: block;   width: 20px;  padding: 0;  margin: 0;   list-style: none;  text-align: center;   right: -100px; 
+		@include breakpoint(xl) { right: -50px; }
+		@include breakpoint(sm) {  width: 100%; right: 0px; bottom: -33px;  }
+		.slick-dots li button:before {@include breakpoint(sm) { width:10px; height:10px; }}
+	}
+}
+
+
+/*Travel Blog*/
+.addblogBox { padding: 10px 0 0 0; 
+	img { width: 100%; }
+	.slick-dots { bottom: 31px; }
+	.slick-dots li { margin: 0px; }
+	.slick-dots li button:before { background:#FFFFFF; }
+	.slick-dots li.slick-active button:before { background:transparent linear-gradient(180deg, #F15747 0%, #F68E63 100%) 0% 0% no-repeat padding-box; }
+}
+
+.travelBlog {
+
+	.blogBox { padding-bottom: 30px;
+			figure{ position: relative; float:left;
+				&:before { content:'';width: 80px;  height: 2px; display: block; background: #ffc9ae;  position: absolute;  top: -10px; left: 46%;
+    transform: translateX(-50%);  @include breakpoint(md){ display: none; } }
+	&:after { content:'';width: 80px;  height: 2px; display: block; background: #ffc9ae;  position: absolute;  bottom: -10px; left: 46%;
+    transform: translateX(-50%); 
+		@include breakpoint(md){ display: none; }
+	}
+			}
+			.block {
+				@include breakpoint(md){ padding: 10px 0; }
+				img { float:left; max-width:180px; margin-right:20px; 
+					@include breakpoint(lg){ width: 100px; }
+					@include breakpoint(sm){ width: 132px; }
+					@include breakpoint(xs){ width: 90px; }
+				}
+				h4 { font-size: 24px; font-weight: 600; 
+					@include breakpoint(xl) { font-size: 20px; }
+					@include breakpoint(sm) { font-size: 18px; }
+					@include breakpoint(xs) { font-size: 14px; }
+				}
+				p { color:#6E6E6E; 
+					@include breakpoint(md){ margin-bottom:6px;  }
+					@include breakpoint(xs){font-size: 12px; }
+				}
+				small{ display: flex; align-items:center;
+					&:before { margin-right:5px; content:''; width: 4px; height:4px; background:#353541; border-radius: 100%; display: inline-block; }
+					@include breakpoint(xs){ font-size: 10px; }
+				}
+			}
+		
+	}
+	.viewall { border:1px solid #000000; border-radius:5px; font-size:16px; color:#000000; text-decoration:none; display:block; padding:10px 10px;     width: 101px;
+    text-align: center; font-weight: 500; margin: 30px auto 0 auto; 
+	@include breakpoint(md){ margin-top: 0px; }
+	@include breakpoint(sm){ display:none; }
+	}
+	.detail {
+		@include breakpoint(sm){ overflow:hidden; }
+	}
+}
+
+/*partnerBox*/
+.partnerBox {padding:20px 0; margin: 40px 0; background:transparent linear-gradient(180deg, #feeeec 0%, #fef4f0 100%) 0% 0% no-repeat padding-box;
+@include breakpoint(sm){padding:10px 0; margin: 0px; }
+	h2 { font-size: 30px; color: #FF5300; margin:15px 0 0 0; 
+		@include breakpoint(sm){font-size: 22px; margin:  0px 0 10px 0;}
+		@include breakpoint(xs){font-size: 18px; text-align:left; margin-bottom:15px; }
+	}
+	ul { list-style:none; margin: 0px; display: flex;  width: 100%; align-items: center;  justify-content: space-between;
+	@include breakpoint(sm){ padding: 0px; }
+		li {
+			img {filter: grayscale(100%);
+			@include breakpoint(lg){ width: 93px; }
+			@include breakpoint(md){ width: 83px; }
+			@include breakpoint(sm){ width: 63px; }
+			@include breakpoint(xs){ width: 53px; }
+			}
+		}
+	}
+}
+/**/
+.subscribeCntr { padding-bottom: 40px; overflow: hidden; 
+@include breakpoint(sm){ padding:5px 0 20px 0; }
+	h2 { text-align: center; padding-top: 20px; font-size: 34px;
+		@include breakpoint(xl) { font-size: 30px; }
+		@include breakpoint(lg) { font-size: 25px; }
+		@include breakpoint(md) { font-size: 20px; text-align:left; padding-bottom:15px; }
+		@include breakpoint(xs) { font-size: 16px;  }
+		
+	}
+.subscribe { border: 1px solid #C2C2C2; border-radius: 27px; padding:5px; max-width: 607px;
+@include breakpoint(sm){ border-radius: 10px; }
+	.textbox { width:calc(100% - 162px); float:left; background:none; border:none; padding:22px; font-size: 20px;
+@include breakpoint(lg){ width:calc(100% - 132px); padding: 13px; font-size: 18px; }
+@include breakpoint(sm){ width:calc(100% - 90px); padding:10px; font-size: 14px; }
+	}
+	.subscribeBtn { font-family:$rubikfont; width:162px;  background: transparent linear-gradient(180deg, #F15747 0%, #F68E63 100%) 0% 0% no-repeat padding-box;
+border-radius: 19px;  text-align: center; font-size:20px; color:#fff; text-decoration: none; font-weight: 500;  padding: 21px 40px; border: none; 
+	@include breakpoint(lg){padding: 15px 24px; font-size: 17px; width: 132px; }
+		@include breakpoint(sm){padding: 11px 10px; width:90px; font-size: 14px;     border-radius: 10px; }
+}
+ }
+}
+
+
+.showdesktop { display:block; 
+		@include breakpoint(sm){ display:none; }
+	}
+	
+	.showmobile { display:none; 
+		@include breakpoint(sm){ display:block; }
+	}
+	
+	/**/
+	.call_banner {  position: fixed;  left: 22px;  z-index: 2;  bottom: 50px; 
+	@include breakpoint(xxl){ display:none; }
+		.close {position: absolute;  right: -5px;  top: -7px; }
+		.call_icon {position: absolute;  left: 0;  bottom: 9px;  width: 100%;   text-align: center;  color: #fff;   text-decoration: none;  font-weight: 500; }
+	}
+	
+	.stickyCallMob {  display:none;   position: fixed; right: 5px; bottom: 100px;  z-index:3;
+	@include breakpoint(sm){ display:block; }
+		.call_dropdown { display:none; position: absolute;  background: #ffff;  bottom: 73px;  right: 0px;  width: 222px;  border-radius: 10px;  box-shadow: 0 3px 6px #00000029; 
+			ul { list-style:none; padding: 0px; margin: 0px;
+				li{
+					a{ font-size: 16px; color:#222222; text-decoration:none; }
+				}
+			}
+		}
+	}
+
+	.perfect_images{
+		.items{ width:33.3%;
+		@include breakpoint(sm){ width: auto;}
+		}
+	}
+
+	.uspBox .slick-dotted.slick-slider{ padding-bottom: 15px;}
+	a {text-decoration: none;} 
