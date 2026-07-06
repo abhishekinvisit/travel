@@ -1,0 +1,1 @@
+self.__BUILD_MANIFEST = (function(a){return {__rewrites:{afterFiles:[{has:a,source:"\u002Fbali-tour-packages.php",destination:"\u002Fbali-tour-packages"},{has:a,source:"\u002Fbali-tour-packages\u002F:slug.php",destination:"\u002Fbali-tour-packages\u002F:slug"}],beforeFiles:[],fallback:[]},sortedPages:["\u002F_app"]}}(void 0));self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()

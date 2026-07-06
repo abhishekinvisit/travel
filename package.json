@@ -1,0 +1,27 @@
+{
+  "name": "invisit-platform",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "backend",
+    "database"
+  ],
+  "scripts": {
+    "dev:website": "npm run dev --workspace=apps/website",
+    "dev:backend": "npm run start:dev --workspace=backend",
+    "build:website": "npm run build --workspace=apps/website",
+    "start:website": "npm run start --workspace=apps/website"
+  },
+  "dependencies": {
+    "@types/node": "^26.1.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.5.2",
+    "next": "^14.2.35",
+    "postcss": "^8.5.16",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^4.3.2",
+    "typescript": "^6.0.3"
+  }
+}

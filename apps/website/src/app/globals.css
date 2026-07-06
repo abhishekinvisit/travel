@@ -1,0 +1,6 @@
+/* Global styles for Invisit platform */
+/* The existing site CSS is loaded via <link> tags in layout.tsx */
+/* Tailwind utilities are available for new components */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

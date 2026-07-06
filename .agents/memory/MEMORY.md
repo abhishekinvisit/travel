@@ -1,0 +1,2 @@
+- [Next.js .php URL routing](php-url-routing.md) — use next.config.mjs rewrites(), NOT middleware; middleware silently skips file-extension paths even with broad matchers.
+- [Next.js .php rewrites — pilot scope](php-url-routing.md) — rewrites must list only migrated routes explicitly; do NOT use a global /:path*.php catch-all while other routes lack pages.

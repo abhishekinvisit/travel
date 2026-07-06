@@ -1,0 +1,296 @@
+Rebuild the Website on a Modern Architecture
+
+The audit and analysis are now complete.
+
+After reviewing the long-term vision for this project, I have decided not to continue building a dynamic PHP application.
+
+Instead, I want to use the audit, reusable components, page inventory, and migration strategy you created as the blueprint for rebuilding the website on a modern technology stack.
+
+This project is no longer just a website migration. It is the foundation of a scalable travel platform.
+
+Long-Term Vision
+
+This platform will eventually include:
+
+Public Website
+CMS
+CRM
+Quotation Builder
+Booking Management
+Customer Portal
+Admin Dashboard
+AI Features
+Future Mobile Apps
+
+However, Phase 2 should only build the foundation and migrate the existing public website.
+
+Technology Stack
+Frontend
+Next.js (Latest App Router)
+React
+TypeScript
+Tailwind CSS
+Backend
+NestJS
+REST API
+Database
+PostgreSQL
+ORM
+Prisma
+MOST IMPORTANT REQUIREMENT
+Existing URLs MUST NOT CHANGE
+
+My current website is already indexed on Google.
+
+Most URLs currently end with .php.
+
+Examples:
+
+/goa-tour-package.php
+
+/manali-tour-package.php
+
+/dubai-tour-package.php
+
+These URLs are permanent.
+
+Even though the new platform will NOT use PHP, the new application must continue serving these exact URLs.
+
+Do NOT:
+
+Remove .php
+Redirect .php URLs
+Rename pages
+Change slugs
+Modify URL structure
+
+The .php extension is now simply part of the public URL and should be preserved for all existing pages.
+
+Future pages created through the CMS may use cleaner URLs, but every currently indexed URL must continue working exactly as it does today.
+
+Preserve SEO
+
+Every migrated page must preserve:
+
+Meta Title
+Meta Description
+Canonical Tags
+Open Graph
+Twitter Cards
+Schema Markup
+Breadcrumb Schema
+Heading Hierarchy
+Internal Links
+Image Alt Text
+Robots.txt
+XML Sitemap
+
+No SEO should be lost during migration.
+
+Preserve Design
+
+The website should look identical.
+
+Do NOT redesign anything.
+
+Keep:
+
+Layout
+Colors
+Typography
+Navigation
+Icons
+Animations
+Responsive Design
+
+The frontend should remain visually unchanged.
+
+Build the Foundation First
+
+Before migrating all pages, build the new architecture.
+
+Project structure:
+
+apps/
+    website/
+
+backend/
+
+database/
+
+shared/
+
+admin/
+
+docs/
+
+Backend modules:
+
+authentication
+destinations
+packages
+hotels
+activities
+blogs
+media
+seo
+users
+forms
+
+crm
+quotation
+booking
+payments
+notifications
+
+Only implement the modules required for the public website.
+
+Leave CRM, quotation, booking, payments, and notifications as placeholder modules for future development.
+
+Database Design
+
+Design a scalable PostgreSQL database using Prisma.
+
+Create models for:
+
+Destinations
+Tour Packages
+Hotels
+Activities
+Blogs
+FAQs
+Media
+SEO
+Contact Enquiries
+Users
+
+Design the schema so it can later support:
+
+CMS
+CRM
+Booking Engine
+Quotation Builder
+AI Features
+
+without requiring another database redesign.
+
+Component Architecture
+
+Convert all repeated UI into reusable React components.
+
+Examples:
+
+Header
+Footer
+Navbar
+Hero
+Package Card
+Destination Card
+Hotel Card
+Activity Card
+FAQ
+Reviews
+Forms
+Search
+CTA
+Newsletter
+Layout System
+
+Create reusable layouts.
+
+Examples:
+
+Destination Layout
+Tour Package Layout
+Blog Layout
+Activity Layout
+Landing Page Layout
+Generic Content Layout
+Content Architecture
+
+Separate content from presentation.
+
+Do NOT hardcode destination content inside React components.
+
+Every page should be generated from structured data that can later come from PostgreSQL and the CMS.
+
+Migration Strategy
+
+Do NOT migrate the entire website immediately.
+
+Follow this process:
+
+Step 1
+
+Build the new architecture.
+
+Step 2
+
+Create the PostgreSQL schema.
+
+Step 3
+
+Build reusable components.
+
+Step 4
+
+Migrate ONE destination section only.
+
+Step 5
+
+Verify:
+
+Existing .php URL works perfectly
+HTML output matches existing website
+SEO metadata is preserved
+Schema markup is preserved
+Responsive design matches
+Performance is improved
+Pixel-perfect UI
+Step 6
+
+Wait for my approval before migrating the remaining website.
+
+Git Workflow
+
+Create Git commits after every major milestone:
+
+Architecture setup
+Database schema
+Component system
+First migrated page
+SEO validation
+Pilot completed
+
+This allows safe rollback if required.
+
+Deliverables Before Full Migration
+
+Before migrating the remaining pages, provide:
+
+New project structure
+Database schema
+Prisma models
+Route mapping
+API architecture
+Folder structure
+SEO preservation report
+Migration roadmap
+Risks and recommendations
+
+Wait for my approval before migrating the rest of the website.
+
+Final Instruction
+
+Do not optimize for speed of delivery.
+
+Optimize for:
+
+Scalability
+Clean architecture
+Enterprise-grade code quality
+Long-term maintainability
+SEO preservation
+Future CMS, CRM, quotation builder, booking engine, AI features, and mobile apps
+
+The goal is to build a platform that will support my travel business for many years while preserving all existing .php URLs and search engine rankings.

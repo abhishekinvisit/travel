@@ -1,0 +1,366 @@
+// Invisit Platform — Prisma Schema
+// Designed for scalability: supports CMS, CRM, Booking Engine,
+// Quotation Builder, AI features, and future mobile apps
+// without requiring another database redesign.
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/@prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─────────────────────────────────────────────
+// ENUMS
+// ─────────────────────────────────────────────
+
+enum Region {
+  DOMESTIC
+  INTERNATIONAL
+}
+
+enum EnquiryStatus {
+  NEW
+  CONTACTED
+  IN_PROGRESS
+  QUOTED
+  BOOKED
+  CLOSED
+  SPAM
+}
+
+enum UserRole {
+  ADMIN
+  AGENT
+  CUSTOMER
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  REFUNDED
+}
+
+enum PaymentStatus {
+  PENDING
+  PARTIAL
+  PAID
+  REFUNDED
+}
+
+enum ContentStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+// ─────────────────────────────────────────────
+// DESTINATIONS & PACKAGES
+// ─────────────────────────────────────────────
+
+model Destination {
+  id             String        @id @default(cuid())
+  slug           String        @unique // e.g. "bali"
+  name           String        // e.g. "Bali"
+  region         Region
+  country        String
+  description    String?       @db.Text
+  bannerImage    String?
+  thumbnailImage String?
+  heroPrice      String?       // display string e.g. "INR 22,999"
+  heroDiscount   String?       // e.g. "Up To 40% OFF"
+  sortOrder      Int           @default(0)
+  isActive       Boolean       @default(true)
+  seo            DestinationSEO?
+  packages       TourPackage[]
+  hotels         Hotel[]
+  activities     Activity[]
+  faqs           FAQ[]
+  blogs          Blog[]        @relation("DestinationBlogs")
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  @@map("destinations")
+}
+
+model TourPackage {
+  id            String      @id @default(cuid())
+  slug          String      @unique
+  title         String
+  duration      String      // e.g. "4N/5D"
+  description   String?     @db.Text
+  thumbnailUrl  String?
+  originalPrice Int?        // in INR (paise)
+  salePrice     Int?        // in INR (paise)
+  discountPct   Int?        // e.g. 30
+  badge         String?     // e.g. "Couple Tour", "Honeymoon", "Group Tour"
+  badgeIcon     String?     // e.g. "bi bi-heart-fill"
+  inclusions    Json        // Array of { icon: string, label: string, className?: string }
+  itinerary     Json?       // Day-by-day itinerary
+  highlights    Json?       // Key highlights
+  inclExclusion Json?       // Inclusions/Exclusions list
+  sortOrder     Int         @default(0)
+  isActive      Boolean     @default(true)
+  destination   Destination @relation(fields: [destinationId], references: [id])
+  destinationId String
+  enquiries     ContactEnquiry[]
+  bookings      Booking[]
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@map("tour_packages")
+}
+
+model Hotel {
+  id            String       @id @default(cuid())
+  slug          String       @unique
+  name          String
+  stars         Int?
+  location      String?
+  description   String?      @db.Text
+  thumbnailUrl  String?
+  amenities     Json?
+  pricePerNight Int?         // in INR (paise)
+  isActive      Boolean      @default(true)
+  destination   Destination? @relation(fields: [destinationId], references: [id])
+  destinationId String?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  @@map("hotels")
+}
+
+model Activity {
+  id            String       @id @default(cuid())
+  slug          String       @unique
+  name          String
+  description   String?      @db.Text
+  thumbnailUrl  String?
+  duration      String?
+  priceFrom     Int?         // in INR (paise)
+  isActive      Boolean      @default(true)
+  destination   Destination? @relation(fields: [destinationId], references: [id])
+  destinationId String?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  @@map("activities")
+}
+
+// ─────────────────────────────────────────────
+// CONTENT
+// ─────────────────────────────────────────────
+
+model Blog {
+  id           String       @id @default(cuid())
+  slug         String       @unique
+  title        String
+  excerpt      String?      @db.Text
+  content      String       @db.Text
+  thumbnailUrl String?
+  author       String       @default("invisit")
+  readTime     Int?         // minutes
+  status       ContentStatus @default(DRAFT)
+  publishedAt  DateTime?
+  seo          BlogSEO?
+  destinations Destination[] @relation("DestinationBlogs")
+  tags         BlogTag[]
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  @@map("blogs")
+}
+
+model BlogTag {
+  id    String @id @default(cuid())
+  name  String @unique
+  slug  String @unique
+  blogs Blog[]
+
+  @@map("blog_tags")
+}
+
+model FAQ {
+  id            String       @id @default(cuid())
+  question      String
+  answer        String       @db.Text
+  defaultOpen   Boolean      @default(false)
+  sortOrder     Int          @default(0)
+  isActive      Boolean      @default(true)
+  destination   Destination? @relation(fields: [destinationId], references: [id])
+  destinationId String?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  @@map("faqs")
+}
+
+model Media {
+  id        String   @id @default(cuid())
+  filename  String
+  url       String
+  altText   String?
+  mimeType  String
+  size      Int?
+  width     Int?
+  height    Int?
+  folder    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("media")
+}
+
+// ─────────────────────────────────────────────
+// SEO
+// ─────────────────────────────────────────────
+
+model DestinationSEO {
+  id              String      @id @default(cuid())
+  destination     Destination @relation(fields: [destinationId], references: [id])
+  destinationId   String      @unique
+  metaTitle       String?
+  metaDescription String?     @db.Text
+  metaKeywords    String?     @db.Text
+  canonicalUrl    String?
+  ogTitle         String?
+  ogDescription   String?     @db.Text
+  ogImage         String?
+  twitterCard     String?     @default("summary_large_image")
+  schemaMarkup    Json?       // JSON-LD structured data
+  robots          String      @default("index, follow")
+  breadcrumb      Json?       // Breadcrumb schema
+  updatedAt       DateTime    @updatedAt
+
+  @@map("destination_seo")
+}
+
+model BlogSEO {
+  id              String   @id @default(cuid())
+  blog            Blog     @relation(fields: [blogId], references: [id])
+  blogId          String   @unique
+  metaTitle       String?
+  metaDescription String?  @db.Text
+  canonicalUrl    String?
+  ogImage         String?
+  robots          String   @default("index, follow")
+  updatedAt       DateTime @updatedAt
+
+  @@map("blog_seo")
+}
+
+// ─────────────────────────────────────────────
+// CRM & ENQUIRIES
+// ─────────────────────────────────────────────
+
+model ContactEnquiry {
+  id             String        @id @default(cuid())
+  firstName      String
+  mobileNo       String
+  email          String?
+  location       String?
+  destination    String?
+  noOfTravelers  Int?
+  travelDate     DateTime?
+  message        String?       @db.Text
+  source         String?       // "popup", "page-form", "whatsapp", "call"
+  status         EnquiryStatus @default(NEW)
+  packageId      String?
+  package        TourPackage?  @relation(fields: [packageId], references: [id])
+  assignedToId   String?
+  assignedTo     User?         @relation("AssignedEnquiries", fields: [assignedToId], references: [id])
+  notes          String?       @db.Text
+  followUpDate   DateTime?
+  quotations     Quotation[]
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  @@map("contact_enquiries")
+}
+
+// ─────────────────────────────────────────────
+// USERS & AUTH
+// ─────────────────────────────────────────────
+
+model User {
+  id               String           @id @default(cuid())
+  email            String           @unique
+  name             String
+  role             UserRole         @default(CUSTOMER)
+  passwordHash     String?
+  phone            String?
+  isActive         Boolean          @default(true)
+  assignedEnquiries ContactEnquiry[] @relation("AssignedEnquiries")
+  bookings         Booking[]
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+
+  @@map("users")
+}
+
+// ─────────────────────────────────────────────
+// QUOTATION (placeholder for future CRM)
+// ─────────────────────────────────────────────
+
+model Quotation {
+  id            String         @id @default(cuid())
+  enquiryId     String
+  enquiry       ContactEnquiry @relation(fields: [enquiryId], references: [id])
+  totalAmount   Int?           // in INR (paise)
+  validUntil    DateTime?
+  items         Json?          // Quoted package details
+  notes         String?        @db.Text
+  status        ContentStatus  @default(DRAFT)
+  sentAt        DateTime?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  @@map("quotations")
+}
+
+// ─────────────────────────────────────────────
+// BOOKING (placeholder for future booking engine)
+// ─────────────────────────────────────────────
+
+model Booking {
+  id            String        @id @default(cuid())
+  bookingRef    String        @unique @default(cuid())
+  userId        String
+  user          User          @relation(fields: [userId], references: [id])
+  packageId     String
+  package       TourPackage   @relation(fields: [packageId], references: [id])
+  travelDate    DateTime?
+  travelers     Int           @default(1)
+  totalAmount   Int           // in INR (paise)
+  bookingStatus BookingStatus @default(PENDING)
+  paymentStatus PaymentStatus @default(PENDING)
+  payments      Payment[]
+  notes         String?       @db.Text
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  @@map("bookings")
+}
+
+// ─────────────────────────────────────────────
+// PAYMENTS (placeholder for future payment integration)
+// ─────────────────────────────────────────────
+
+model Payment {
+  id            String        @id @default(cuid())
+  bookingId     String
+  booking       Booking       @relation(fields: [bookingId], references: [id])
+  amount        Int           // in INR (paise)
+  gateway       String?       // e.g. "razorpay", "stripe"
+  gatewayRef    String?       // payment gateway transaction ID
+  status        PaymentStatus @default(PENDING)
+  paidAt        DateTime?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  @@map("payments")
+}
