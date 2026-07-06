@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="26" viewBox="0 0 26 26">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f15747"/>
+      <stop offset="1" stop-color="#f68e63"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_33732" data-name="Group 33732" transform="translate(-985 -752)">
+    <circle id="Ellipse_734" data-name="Ellipse 734" cx="13" cy="13" r="13" transform="translate(985 752)" fill="url(#linear-gradient)"/>
+    <text id="_1" data-name="+1" transform="translate(997 770)" fill="#fff" font-size="12" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="-6" y="0">+1</tspan></text>
+  </g>
+</svg>

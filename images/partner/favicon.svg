@@ -1,0 +1,11 @@
+<svg id="White_Logo_invisit" data-name="White Logo invisit" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20.014" height="22.654" viewBox="0 0 20.014 22.654">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.444" y1="-0.408" x2="0.52" y2="0.589" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fa5543"/>
+      <stop offset="1" stop-color="#ff8f60"/>
+    </linearGradient>
+  </defs>
+  <path id="Path_54209" data-name="Path 54209" d="M.27,53.32H4.412V66.446H.27Z" transform="translate(-0.222 -43.796)"/>
+  <path id="Path_54210" data-name="Path 54210" d="M37.392,51.653h3.379l.3,1.95H41.2a9.762,9.762,0,0,1,2.254-1.675,5.444,5.444,0,0,1,2.617-.638,4,4,0,0,1,3.5,1.583,7.4,7.4,0,0,1,1.157,4.476v7.434H46.555V57.861a4.136,4.136,0,0,0-.488-2.345,1.707,1.707,0,0,0-1.522-.672,2.94,2.94,0,0,0-1.491.366,8.12,8.12,0,0,0-1.522,1.216v8.347H37.394V51.653h0Z" transform="translate(-30.712 -42.129)"/>
+  <path id="Path_54211" data-name="Path 54211" d="M3.1,4.635,0,3.965,6.7,0,4.187,7.5" fill="url(#linear-gradient)"/>
+</svg>
